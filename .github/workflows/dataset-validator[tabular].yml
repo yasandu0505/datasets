@@ -1,17 +1,9 @@
 name: Run Tabular Validator
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'data/statistics/**'
-
   pull_request:
     branches:
       - main
-    paths:
-      - 'data/statistics/**'
 
 jobs:
   validate:
@@ -26,6 +18,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Debug - List validator directory
+        run: ls -la scripts/validator/
 
       - name: Install dependencies
         working-directory: scripts/validator
