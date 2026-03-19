@@ -1,9 +1,9 @@
 name: Run Tabular Validator
 
 on:
-  pull_request:
+  push:
     branches:
-      - workflow/validating-datasets
+      - main
     paths:
       - 'data/statistics/**'
 
