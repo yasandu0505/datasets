@@ -9,23 +9,20 @@ jobs:
   validate:
     name: Validate Statistics Data
     runs-on: ubuntu-latest
-
+ 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+ 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Debug - List validator directory
-        run: ls -la scripts/validator/
-
+ 
       - name: Install dependencies
         working-directory: scripts/validator
         run: pip install -r requirements.txt
-
+ 
       - name: Run validator
         working-directory: scripts/validator
         run: python main.py ../../data/statistics tabular
