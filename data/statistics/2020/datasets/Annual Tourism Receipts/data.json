@@ -1,12 +1,14 @@
 {
   "columns": [
     "Value in Rupees(Mn)",
-    "Value in USD(Mn)"
+    "Value in USD(Mn)",
+    "Year"
   ],
   "rows": [
     [
       126608.1,
-      682.5
+      682.5,
+      2020
     ]
   ]
 }
