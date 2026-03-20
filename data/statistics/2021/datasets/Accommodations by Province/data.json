@@ -1,14 +1,14 @@
 {
-  "columns": ["Province", "Number of Rooms"],
+  "columns": ["Province", "Number of Rooms", "Number of Rooms"],
   "rows": [
-    ["Western Province", 16489],
-    ["Southern Province", 12094],
-    ["Central Province", 7991],
-    ["Eastern Province", 2432],
-    ["Uva Province", 2381],
-    ["North Central Province", 2302],
-    ["North Western Province", 1834],
-    ["Sabaragamuwa Province", 1037],
-    ["Northern Province", 777]
+    ["Western Province", 16489, 16489],
+    ["Southern Province", 12094, 12094],
+    ["Central Province", 7991, 7991],
+    ["Eastern Province", 2432, 2432],
+    ["Uva Province", 2381, 2381],
+    ["North Central Province", 2302, 2302],
+    ["North Western Province", 1834, 1834],
+    ["Sabaragamuwa Province", 1037, 1037],
+    ["Northern Province", 777, 777]
   ]
 }
