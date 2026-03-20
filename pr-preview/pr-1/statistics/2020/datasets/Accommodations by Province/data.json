@@ -1,0 +1,14 @@
+{
+  "columns": ["Province", "Number of Rooms", "Number of Rooms"],
+  "rows": [
+    ["Western Province", 15817, 15817],
+    ["Southern Province", 9950, 9950],
+    ["Central Province", 7274, 7274],
+    ["Eastern Province", 2340, 2340],
+    ["Uva Province", 2028, 2028],
+    ["North Central Province", 1979, 1979],
+    ["North Western Province", 1639, 1639],
+    ["Sabaragamuwa Province", 970, 970],
+    ["Northern Province", 753, 753]
+  ]
+}
