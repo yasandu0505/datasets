@@ -8,10 +8,6 @@ on:
       - 'data/statistics/**'
   workflow_dispatch:
     inputs:
-      dataset_path:
-        description: "Path to dataset"
-        required: false
-        default: "../../data/statistics"
       mode:
         description: "Validation mode"
         required: false
@@ -23,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATASET_PATH: ${{ github.event.inputs.dataset_path || '../../data/statistics' }}
+      DATASET_PATH: ${{ vars.DATASET_DIR_PATH_VAR || '../../data/statisticSs' }}
       MODE: ${{ github.event.inputs.mode || 'tabular' }}
 
     steps:
@@ -42,7 +38,7 @@ jobs:
         working-directory: scripts/validator
         run: |
           echo "Running with:"
-          echo "Dataset: $DATASET_PATH"
-          echo "Mode: $MODE"
+          echo "Dataset Directory: $DATASET_PATH"
+          echo "Validation Mode: $MODE"
 
           python main.py "$DATASET_PATH" "$MODE"
