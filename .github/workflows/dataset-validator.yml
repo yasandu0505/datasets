@@ -33,6 +33,13 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Debug file structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Listing files:"
+          ls -R
+
       - name: Install dependencies
         run: pip install -r scripts/validator/requirements.txt
 
@@ -42,5 +49,5 @@ jobs:
           echo "Running with:"
           echo "Dataset: $DATASET_PATH"
           echo "Mode: $MODE"
-          
+
           python main.py "$DATASET_PATH" "$MODE"
