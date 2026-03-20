@@ -4,24 +4,43 @@ on:
   push:
     branches:
       - main
-      
+  workflow_dispatch:
+    inputs:
+      dataset_path:
+        description: "Path to dataset"
+        required: false
+        default: "../../data/statistics"
+      mode:
+        description: "Validation mode"
+        required: false
+        default: "tabular"
+
 jobs:
   validate:
     name: Validate Statistics Data
     runs-on: ubuntu-latest
- 
+
+    env:
+      DATASET_PATH: ${{ github.event.inputs.dataset_path || '../../data/statistics' }}
+      MODE: ${{ github.event.inputs.mode || 'tabular' }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
- 
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
- 
+
       - name: Install dependencies
         run: pip install -r scripts/validator/requirements.txt
- 
+
       - name: Run validator
         working-directory: scripts/validator
-        run: python main.py ../../data/statistics tabular
+        run: |
+          echo "Running with:"
+          echo "Dataset: $DATASET_PATH"
+          echo "Mode: $MODE"
+          
+          python main.py "$DATASET_PATH" "$MODE"
