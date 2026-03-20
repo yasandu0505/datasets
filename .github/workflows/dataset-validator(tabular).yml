@@ -1,12 +1,11 @@
 name: Run Tabular Validator
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
+    paths:
+      - 'data/statistics/**'
   workflow_dispatch:
     inputs:
       dataset_path:
@@ -20,7 +19,7 @@ on:
 
 jobs:
   validate:
-    name: Validate Statistics Data
+    name: Validate Statistics Data [Tabular]
     runs-on: ubuntu-latest
 
     env:
